@@ -24,6 +24,6 @@ async def call_api(msg):
                 data.extend(response_json['result'])
                 df = pd.DataFrame(data, columns=['timestamp', 'volatility'])
                 df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')  # Convert timestamp to datetime
-                df.to_csv('Date\historical_volatility.csv', index=False)
+                df.to_csv('Data\historical_volatility.csv', index=False)
 
 asyncio.get_event_loop().run_until_complete(call_api(json.dumps(msg)))
