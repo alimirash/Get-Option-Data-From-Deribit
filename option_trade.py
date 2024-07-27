@@ -3,9 +3,11 @@ import asyncio
 import websockets
 import json
 import time
+import datetime as dt
 
+now_time = dt.datetime.now()
 start_timestamp = int(time.mktime(time.strptime('2024-07-19 00:00:00', '%Y-%m-%d %H:%M:%S')) * 1000)
-end_timestamp = int(time.mktime(time.strptime('2024-07-23 23:59:59', '%Y-%m-%d %H:%M:%S')) * 1000)
+end_timestamp = int(time.mktime(time.strptime(now_time.strftime('%Y-%m-%d %H:%M:%S'), '%Y-%m-%d %H:%M:%S')) * 1000)
 
 msg_template = {
     "jsonrpc": "2.0",
